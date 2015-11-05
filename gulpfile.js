@@ -8,7 +8,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('watcher',function(){
-  gulp.watch('jsx/*.jsx', ['css']);
+  gulp.watch('jsx/*.jsx', ['js']);
 });
 
 gulp.task('default', ['watcher', 'js']);
