@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './component.jsx';
+import Note from './component.jsx';
 import './styles.scss';
 
 
-ReactDOM.render(<Hello />, document.getElementById('app'));
+
+
+
+
+ReactDOM.render(<Note />, document.getElementById('app'));
 
 
 
