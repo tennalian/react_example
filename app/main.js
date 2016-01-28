@@ -6,7 +6,7 @@ import './styles.scss';
 
 
 
-
+console.log('dfdfd');
 
 ReactDOM.render(<Note />, document.getElementById('app'));
 

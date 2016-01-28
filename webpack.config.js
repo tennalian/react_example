@@ -1,8 +1,14 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
 
 module.exports = {
-	entry: ['webpack-dev-server/client', 'webpack/hot/dev-server', './app/main'],
+	entry: [
+		// 'webpack-dev-server/client',
+		// 'webpack/hot/dev-server',
+		'./app/main'
+	],
 	output: {
 		path: './public',
 		filename: 'build.js'
@@ -33,9 +39,15 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('styles.css')
+		new ExtractTextPlugin('styles.css'),
+		new BrowserSyncPlugin({
+			host: 'localhost',
+			port: 3000,
+			server: { baseDir: ['./'] },
+			tunnel: "tenn"
+	    })
 	],
-	devServer:{
-		contentBase: './'
-    }
+	// devServer:{
+	// 	contentBase: './',
+	// }
 };
