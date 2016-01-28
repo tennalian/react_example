@@ -44,7 +44,7 @@ module.exports = {
 			host: 'localhost',
 			port: 3000,
 			server: { baseDir: ['./'] },
-			tunnel: "tenn"
+			// tunnel: "tenn"
 	    })
 	],
 	// devServer:{
