@@ -2,7 +2,8 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: ['webpack-dev-server/client', 'webpack/hot/dev-server', './app/main'],
+	// entry: ['webpack-dev-server/client', 'webpack/hot/dev-server', './app/main'],
+	entry: ['./app/main'],
 	output: {
 		path: './public',
 		filename: 'build.js'
@@ -32,10 +33,10 @@ module.exports = {
 		    },
 		]
 	},
-	plugins: [
-		new ExtractTextPlugin('styles.css')
-	],
-	devServer:{
-		contentBase: './'
-    }
+	// plugins: [
+	// 	new ExtractTextPlugin('styles.css')
+	// ],
+	// devServer:{
+	// 	contentBase: './',
+ //    }
 };

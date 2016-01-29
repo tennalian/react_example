@@ -1,8 +1,21 @@
 import React from 'react';
-// require('styles.scss');
 
-export default class Hello extends React.Component {
+
+export default class Badge extends React.Component {
   render() {
-    return <h1>Hello world</h1>;
+    return (
+    	<div className='messages'>
+	    	<button type='button' className='btn btn-primary'>
+	    		{this.props.title} <span className='badge'>{this.props.number} 10</span>
+	    	</button>
+    	</div>
+    )
   }
 }
+
+var options = {
+	title: "Inbox",
+	number: 30
+}
+
+// var element = React.CreateElement(Badge, options);
