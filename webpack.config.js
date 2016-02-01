@@ -4,11 +4,12 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 module.exports = {
-	entry: [
-		// 'webpack-dev-server/client',
-		// 'webpack/hot/dev-server',
-		'./app/main'
-	],
+	// entry: [
+	// 	'webpack-dev-server/client',
+	// 	'webpack/hot/dev-server',
+	// 	'./app/main'
+	// ],
+	entry: './app/main',
 	output: {
 		path: './public',
 		filename: 'build.js'
