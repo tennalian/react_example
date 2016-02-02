@@ -21,10 +21,9 @@ html, body{
  h1{
  	font-size: 24px;
  	margin: 0 0 20px;
- 	display: inline-block;
- 	padding: 0 0 0 50px;
-	background: url('img/q.svg') no-repeat left center;
+ 	text-align: center;
  }
+
 
 
 .messages{
@@ -42,10 +41,34 @@ html, body{
 	}
 }
 
-ul{
-	li{
-		color: black;
+
+textarea{resize: none;}
+.todo{
+	padding: 20px;
+	display:block;
+	width: 500px;
+	margin: 0 auto;
+	.list{margin-bottom: 20px;}
+	ul{
+		margin: 0;
+		padding: 0;
+		li{
+			list-style: none;
+			display: block;
+			padding: 10px;
+			border-top: 1px solid #D0D0D0;
+			border-bottom: 1px solid #D0D0D0;
+			font-size: 14px;
+			position: relative;
+			& + li{border-top: 0;}
+			.buttons{
+				display: inline-block;
+				vertical-align: middle;
+				width: 90px;
+			}
+		}
 	}
 }
 
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+ @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);

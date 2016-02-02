@@ -4,16 +4,8 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 module.exports = {
-<<<<<<< HEAD
 	// entry: ['webpack-dev-server/client', 'webpack/hot/dev-server', './app/main'],
 	entry: ['./app/main'],
-=======
-	entry: [
-		// 'webpack-dev-server/client',
-		// 'webpack/hot/dev-server',
-		'./app/main'
-	],
->>>>>>> b09ebb0666d0b85a37031a14d2d945b10d6ae315
 	output: {
 		path: './public',
 		filename: 'build.js'
@@ -43,14 +35,6 @@ module.exports = {
 		    },
 		]
 	},
-<<<<<<< HEAD
-	// plugins: [
-	// 	new ExtractTextPlugin('styles.css')
-	// ],
-	// devServer:{
-	// 	contentBase: './',
- //    }
-=======
 	plugins: [
 		new ExtractTextPlugin('styles.css'),
 		new BrowserSyncPlugin({
@@ -63,5 +47,4 @@ module.exports = {
 	// devServer:{
 	// 	contentBase: './',
 	// }
->>>>>>> b09ebb0666d0b85a37031a14d2d945b10d6ae315
 };
