@@ -10,39 +10,29 @@ html, body{
 	margin: 0;
 	padding: 0;
 }
- body{
- 	min-height: 100%;
- 	height: auto;
- 	font-size: 18px;
- 	color: black;
- 	font-family: 'Open Sans', Arial, sans-serif;
- }
+body{
+	min-height: 100%;
+	height: auto;
+	font-size: 18px;
+	color: black;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
 
- h1{
- 	font-size: 24px;
- 	margin: 0 0 20px;
- 	text-align: center;
- }
+h1{
+	font-size: 24px;
+	margin: 0 0 20px;
+	text-align: center;
+}
 
 
 
 .messages{
 	padding: 30px;
-
-.note{
-	width: 300px;
-	textarea{
-		width: 100%;
-	}
-	.btn{
-		padding: 20px;
-		border-radius: 5px;
-		background: black;
-	}
 }
 
 
 textarea{resize: none;}
+
 .todo{
 	padding: 20px;
 	display:block;
