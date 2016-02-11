@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom';
 import './styles.scss';
 
 var App = React.createClass ({
-	propTypes: {
-		text: React.PropTypes.string.isRequired
-	},
 	getInitialState(){
 		return {
 			todos: ['then']
@@ -67,9 +64,7 @@ const Task = React.createClass({
 			act: ''
 		}
 	},
-	propTypes: {
-		val: React.PropTypes.string.isRequired
-	},
+
 	editTask(e){
 		e.preventDefault();
 		this.setState({
