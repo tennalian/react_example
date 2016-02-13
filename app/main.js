@@ -3,37 +3,41 @@ import ReactDOM from 'react-dom';
 // import Note from './component.jsx';
 import './styles.scss';
 
+var todos = [];
+
 var App = React.createClass ({
 	getInitialState(){
 		return {
-			todos: ['then']
+			todos: todos,
+			err: null
 		}
-	},
-	deleteTask(e){
-		e.preventDefault();
-		let i = +e.target.value,
-			key = this.props.todos.splice(i,1);
-		this.setState({
-			todos: this.props.todos
-		});
-		console.log(this.props.todos);
 	},
 	addTask(e){
 		e.preventDefault();
-		this.setState({
-			todos: this.state.todos.concat([this.refs.task.value])
-		});
-		this.refs.task.value = '';
+		if(this.refs.task.value.length > 5){
+			this.setState({
+				todos: this.state.todos.concat([this.refs.task.value]),
+				err: null,
+			});
+			this.refs.task.value = '';
+			this.refs.task.className = 'form-control'
+		}
+		else{
+			this.refs.task.className = 'form-control error';
+			this.setState({
+				err: "Text can't be less 6 symbols",
+			});
+		}
 	},
 	render(){
-		console.log(this.state.todos);
 		return(
 			<div className='todo'>
 				<h1>Todo List</h1>
-				<TasList todos={this.state.todos}/>
+				<TaskList todos={this.state.todos}/>
 				<form onSubmit={this.addTask} >
 					<div className='form-group'>
-						<textarea type="text" ref="task" className='form-control'>{this.props.text}</textarea>
+						<textarea type="text" ref="task" className='form-control'></textarea>
+						<span className='error-description'>{this.state.err}</span>
 					</div>
 					<button type="submit" className='btn btn-success pull-right'> Add Task </button>
 					<div className='clearfix'></div>
@@ -43,25 +47,43 @@ var App = React.createClass ({
 	}
 });
 
-var TasList = React.createClass ({
-
+var TaskList = React.createClass ({
+	deleteTask(e){
+		e.preventDefault();
+		let i = +e.target.value,
+			key = this.props.todos.splice(i,1);
+		this.setState({
+			todos: this.props.todos
+		});
+	},
 	render(){
-		return(
-			<div className='list edit-list'>
-				<ul>{this.props.todos.map((item, i) =>
-					<li key={i}>
-						<Task index={i} val={item} todos={this.props.todos} del={this.deleteTask}/>
-					</li>
-				)}</ul>
-			</div>
-		)
+		if (this.props.todos.length > 0){
+			return(
+				<div className='list edit-list'>
+					<ul>{this.props.todos.map((item, i) =>
+						<li key={i}>
+							<Task index={i} val={item} todos={this.props.todos} del={this.deleteTask}/>
+						</li>
+					)}</ul>
+				</div>
+			)
+		}
+		else{
+			return(
+				<div className='list none-list'>
+					<p className='bg-warning'>Please enter task</p>
+				</div>
+			)
+		}
+
 	}
 })
 
 const Task = React.createClass({
 	getInitialState(){
 		return {
-			act: ''
+			act: '',
+			err: null
 		}
 	},
 
@@ -73,11 +95,21 @@ const Task = React.createClass({
 	},
 	saveTask(e){
 		e.preventDefault();
-		console.log()
-		this.props.todos[this.props.index] = this.refs.editTask.value;
-		this.setState({
-			act: '',
-		});
+		if(this.refs.editTask.value.length > 5){
+			this.props.todos[this.props.index] = this.refs.editTask.value;
+			this.setState({
+				act: '',
+				err: null,
+			});
+			this.refs.editTask.className='form-control'
+		}
+		else{
+			this.refs.editTask.className='form-control error'
+			this.setState({
+				err: "Text can't be less 6 symbols",
+			});
+		}
+
 	},
 	render(){
 		if (this.state.act !== "edit"){
@@ -97,6 +129,7 @@ const Task = React.createClass({
 				<form onSubmit={this.saveTask} >
 					<div className='form-group col-md-10'>
 						<textarea type="text" ref="editTask" className='form-control' defaultValue={this.props.val}></textarea>
+						<span className='error-description'>{this.state.err}</span>
 					</div>
 					<button  type="submit" className='btn btn-success'> Save </button>
 					<div className='clearfix'></div>

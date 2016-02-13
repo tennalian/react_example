@@ -33,6 +33,7 @@ h1{
 
 textarea{resize: none;}
 
+
 .todo{
 	padding: 20px;
 	display:block;
@@ -58,6 +59,22 @@ textarea{resize: none;}
 			}
 		}
 	}
+	.none-list{
+		p{
+			padding: 15px;
+			border-radius: 3px;
+			text-align: center;
+			font-size: 18px;
+		}
+	}
+	.error-description{
+		color: #a94442;
+		font-size: 12px;
+	}
+}
+
+.form-control.error{
+	border: 1px solid #a94442;
 }
 
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
