@@ -8,7 +8,7 @@ import './styles.scss';
 var App = React.createClass ({
 	getInitialState(){
 		return {
-			todos: ['then']
+			todos: [],
 		}
 	},
 	addTask(e){
@@ -88,7 +88,7 @@ var List = React.createClass ({
 			return(
 				<div className='list edit-list'>
 					<form onSubmit={this.saveTask} >
-						<div className='form-group col-md-10'>
+						<div className='form-group col-md-10 col-xs-10'>
 							<textarea type="text" ref="editTask" className='form-control' defaultValue={this.state.text}></textarea>
 						</div>
 						<button  type="submit" className='btn btn-success'> Save </button>
