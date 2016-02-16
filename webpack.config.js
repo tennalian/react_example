@@ -30,7 +30,8 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				// loader: ExtractTextPlugin.extract('style-loader', 'css-loader','sass-loader')
-				loader: 'style-loader!css-loader!sass-loader'
+				loader: 'style!css!sass',
+				exclude: /\/node_modules/
 			},
 			{
 		    	test: /\.(png|jpg|svg|ttf|woff|woff2|eot)$/,

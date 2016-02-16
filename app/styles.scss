@@ -10,20 +10,30 @@ html, body{
 	margin: 0;
 	padding: 0;
 }
- body{
- 	min-height: 100%;
- 	height: auto;
- 	font-size: 18px;
- 	color: black;
- 	font-family: 'Open Sans', Arial, sans-serif;
- }
+body{
+	min-height: 100%;
+	height: auto;
+	font-size: 18px;
+	color: black;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
 
- h1{
- 	font-size: 24px;
- 	margin: 0 0 20px;
- 	text-align: center;
- }
+h1{
+	font-size: 24px;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+
+
+.messages{
+	padding: 30px;
+}
+
+
 textarea{resize: none;}
+
+
 .todo{
 	padding: 20px;
 	display:block;
@@ -49,6 +59,22 @@ textarea{resize: none;}
 			}
 		}
 	}
+	.none-list{
+		p{
+			padding: 15px;
+			border-radius: 3px;
+			text-align: center;
+			font-size: 18px;
+		}
+	}
+	.error-description{
+		color: #a94442;
+		font-size: 12px;
+	}
+}
+
+.form-control.error{
+	border: 1px solid #a94442;
 }
 
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
