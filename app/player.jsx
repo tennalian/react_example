@@ -35,7 +35,9 @@ module.exports = React.createClass({
 	render(){
 		var src = this.props.playList[this.state.current];
 		return(
-			<Player src={src} onEnded={this.onEnded} />
+			<div className="player-wrapper">
+				<Player src={src} onEnded={this.onEnded} />
+			</div>
 		)
 	}
 })
