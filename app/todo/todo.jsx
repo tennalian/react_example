@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './todo.scss';
 
 
 var todos = [];
@@ -31,7 +31,7 @@ module.exports = React.createClass ({
 	render(){
 		return(
 			<div className='todo'>
-				<h1>Todo List</h1>
+				<h2>Todo List</h2>
 				<TaskList todos={this.state.todos}/>
 				<form onSubmit={this.addTask} >
 					<div className='form-group'>

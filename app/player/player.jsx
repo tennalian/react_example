@@ -2,6 +2,11 @@ import React from 'react';
 import './player.scss';
 
 var PLAYER_ID = 'player';
+var playList = [
+	'http://stforex.ru/sites/stforex.com/themes/stforex_bs/assets/100/video/video.webm',
+	'http://stforex.ru/sites/stforex.com/themes/stforex_bs/assets/121/video/video.mp4',
+	'http://stforex.ru/sites/stforex.com/themes/stforex_bs/assets/95/video/video.mp4'
+];
 
 var Player = React.createClass({
 	componentDidMount(){
@@ -17,7 +22,7 @@ var Player = React.createClass({
 	}
 });
 
-module.exports = React.createClass({
+var PlayerContainer = React.createClass({
 	getInitialState(){
 		return{
 			current: 0
@@ -42,3 +47,11 @@ module.exports = React.createClass({
 	}
 })
 
+
+module.exports = React.createClass({
+	render(){
+		return(
+			<PlayerContainer playList={playList}/>
+		)
+	}
+})

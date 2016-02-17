@@ -2,17 +2,17 @@ import React from 'react';
 import './timer.scss';
 
 
-module.exports = React.createClass({
+var Timer = React.createClass({
 	getInitialState(){
 		return{
 			count: Date.parse(this.props.date)
 		}
 	},
 	componentDidMount(){
-		var interval = setInterval(this.tick,1000);
+		this.interval = setInterval(this.tick,1000);
 	},
 	componentWillUnmount(){
-		clearInterval(interval);
+		clearInterval(this.interval);
 	},
 	tick(){
 		var next = this.state.count - 1000;
@@ -51,5 +51,13 @@ module.exports = React.createClass({
 				</div>
 			)
 		}
+	}
+})
+
+module.exports = React.createClass({
+	render(){
+		return(
+			<Timer currentDate={new Date()} date={'Jul,18,2016 00:00:00'}/>
+		)
 	}
 })
