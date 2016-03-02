@@ -1,4 +1,4 @@
-# react-test-project
+# react-example
 To run the examples:
 * Clone this repo
 * Run npm install
